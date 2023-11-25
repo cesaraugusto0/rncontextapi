@@ -1,10 +1,10 @@
-import { InfoProvider } from "./src/context/GlobalContext";
+import { TemaProvider } from "./src/context/TemaContext";
 import Rotas from "./src/rotas";
 
 export default function App() {
   return (
-    <InfoProvider>
+    <TemaProvider>
       <Rotas />
-    </InfoProvider>
+    </TemaProvider>
   );
 }
