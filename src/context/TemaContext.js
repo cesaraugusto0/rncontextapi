@@ -13,11 +13,13 @@ export function TemaProvider( {children} ) {
         'claro': claro
     }
 
-    useEffect(async () => {
-        const temaSalvo = await AsyncStorage.getItem('@tema')
-        if(temaSalvo) {
-            setTemaAtual(temaSalvo)
-        }
+    useEffect(() => {
+        (async () => {
+            const temaSalvo = await AsyncStorage.getItem('@tema')
+            if(temaSalvo) {
+                setTemaAtual(temaSalvo)
+            }
+        })();
     },[])
 
     async function salvarTemaNoDispositivo(tema) {
